@@ -1,0 +1,16 @@
+.btn {
+  &,
+  &:link,
+  &:visited {
+    background-color: $color-primary;
+    border: none;
+    width: 20rem;
+    height: 4rem;
+    border-radius: 2rem;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

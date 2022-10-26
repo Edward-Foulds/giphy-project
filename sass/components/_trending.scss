@@ -1,0 +1,13 @@
+.trending-giphys {
+  padding: 2rem;
+
+  &__item {
+    margin: 2rem 0;
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
