@@ -1,13 +1,19 @@
 .trending-giphys {
   padding: 2rem;
+  @include respond(tab-port) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1.5rem;
+  }
 
   &__item {
     margin: 2rem 0;
   }
 
   &__img {
-    display: block;
+    height: auto;
     width: 100%;
-    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 }

@@ -18,6 +18,8 @@ export default class View {
   }
 
   _clear() {
+    const x = (this._parentElement.previousSibling.innerHTML = "");
+    console.log("Previous sibling:", x);
     this._parentElement.innerHTML = "";
   }
 
@@ -30,15 +32,15 @@ export default class View {
       </div>
     `;
     this._clear();
-    this._parentElement.insertAdjacentHTML("beforebegin", markup);
+    this._parentElement.insertAdjacentHTML("afterbegin", markup);
   }
 
-  renderError() {
+  renderError(message = this._errorMessage) {
     const markup = `<div class="error">
           <svg>
             <use href="${icons}#icon-warning"></use>
           </svg>
-          <p>Oh no, something went snap!</p>
+          <p>${message}</p>
         </div>
     `;
     this._clear();

@@ -2,6 +2,8 @@ import View from "./View.js";
 
 class ResultsView extends View {
   _parentElement = document.querySelector(".gallery");
+  _errorMessage =
+    "No GIPHY's found matching your search. Please try a different search.";
 
   _generateMarkup() {
     return this._data.results

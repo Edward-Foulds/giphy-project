@@ -13,6 +13,7 @@ const controlRandomGiphy = async function () {
     randomGiphyView.render(model.state.giphy);
   } catch (err) {
     console.error(err);
+    randomGiphyView.renderError(err.message);
   }
 };
 
@@ -20,13 +21,15 @@ const controlSearchResults = async function () {
   try {
     resultsView.renderLoading();
     const query = searchView.getQuery();
-    if (!query) return;
-    console.log(query);
-
+    if (!query)
+      throw new Error(
+        "Please enter a search keyword into the search field above"
+      );
     await model.loadSearchResults(query);
     resultsView.render(model.state.search);
   } catch (err) {
     console.error(err);
+    resultsView.renderError(err.message);
   }
 };
 
@@ -38,6 +41,7 @@ const controlTrendingGiphys = async function () {
     console.log();
   } catch (err) {
     console.error(err);
+    trendingGiphyView.renderError(err.message);
   }
 };
 

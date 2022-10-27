@@ -1,10 +1,17 @@
 .gallery {
   width: 100%;
   display: grid;
+  justify-content: center;
 
-  grid-template-columns: repeat(4, 1fr);
-
+  grid-template-columns: repeat(4, auto);
   grid-gap: 1.5rem;
+
+  @include respond(tab-land) {
+    grid-template-columns: repeat(3, auto);
+  }
+  @include respond(tab-port) {
+    grid-template-columns: repeat(2, auto);
+  }
 
   &__image {
     height: auto;

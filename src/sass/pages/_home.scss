@@ -2,6 +2,10 @@ main {
   display: flex;
   justify-content: center;
   width: 100vw;
+
+  @include respond(tab-port) {
+    flex-direction: column;
+  }
 }
 
 .section-random {

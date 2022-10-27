@@ -2,6 +2,8 @@ import View from "./View.js";
 
 class TrendingGiphyView extends View {
   _parentElement = document.querySelector(".trending-giphys");
+  _errorMessage =
+    "No trending GIPHY's found. Please check your connection and try again.";
 
   _generateMarkup() {
     return this._data.results

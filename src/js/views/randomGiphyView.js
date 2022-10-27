@@ -2,6 +2,8 @@ import View from "./View.js";
 
 class RandomView extends View {
   _parentElement = document.querySelector(".random-giphy");
+  _errorMessage =
+    "No random GIPHY found. Please check your connection and try again!";
 
   _generateMarkup() {
     return `

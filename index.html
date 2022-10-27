@@ -18,13 +18,30 @@
         <h1 class="heading-primary">Giphy Project</h1>
       </div>
     </header>
+    <nav class="navigation">
+      <button class="navigation__btn">
+        <svg class="navigation__icon">
+          <use xlink:href="src/img/sprite.svg#icon-image"></use>
+        </svg>
+      </button>
+      <button class="navigation__btn">
+        <svg class="navigation__icon">
+          <use xlink:href="src/img/sprite.svg#icon-magnifying-glass"></use>
+        </svg>
+      </button>
+      <button class="navigation__btn">
+        <svg class="navigation__icon">
+          <use xlink:href="src/img/sprite.svg#icon-thumbs-up"></use>
+        </svg>
+      </button>
+    </nav>
     <main>
       <section class="section-random">
         <h1 class="heading-secondary">Random</h1>
         <div class="random-giphy">
-          <figure class="random-giphy__item">
+          <!-- <figure class="random-giphy__item">
             <img src="./src/img/gal-1.jpeg" alt="" class="random-giphy__img" />
-          </figure>
+          </figure> -->
         </div>
         <button class="btn random-btn">
           <svg class="random-btn__icon">
@@ -53,7 +70,16 @@
           </form>
         </div>
         <div class="gallery">
-          <figure class="gallery__item gallery__item--1">
+          <div class="loading">
+            <svg>
+              <use href="src/img/sprite.svg#icon-magnifying-glass"></use>
+            </svg>
+            <p>
+              Type a word or phrase into the search bar above and see what
+              GIPHY's we have to offer!!
+            </p>
+          </div>
+          <!-- <figure class="gallery__item gallery__item--1">
             <img src="./src/img/gal-1.jpeg" alt="" class="gallery__image" />
           </figure>
           <figure class="gallery__item gallery__item--2">
@@ -76,7 +102,7 @@
           </figure>
           <figure class="gallery__item gallery__item--8">
             <img src="./src/img/gal-3.jpeg" alt="" class="gallery__image" />
-          </figure>
+          </figure> -->
         </div>
       </section>
 
