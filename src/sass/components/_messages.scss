@@ -1,0 +1,40 @@
+.loading,
+.error {
+  margin: 5rem auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+
+  svg {
+    height: 6rem;
+    width: 6rem;
+  }
+  p {
+    margin: 1rem;
+  }
+}
+
+.loading {
+  border: 3px $color-primary dashed;
+
+  svg {
+    fill: $color-primary;
+    animation: rotate 2s infinite linear;
+  }
+  p {
+    color: $color-primary;
+  }
+}
+
+.error {
+  border: 3px $color-secondary-dark dashed;
+
+  svg {
+    fill: $color-secondary-dark;
+  }
+  p {
+    color: $color-secondary-dark;
+  }
+}

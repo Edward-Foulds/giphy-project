@@ -1,0 +1,22 @@
+.random-giphy {
+  padding: 2rem;
+
+  &__item {
+  }
+
+  &__img {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.random-btn {
+  &__btn {
+  }
+
+  &__icon {
+    height: 2rem;
+    width: 2rem;
+  }
+}

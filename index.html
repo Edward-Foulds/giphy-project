@@ -8,8 +8,9 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>Document</title>
+    <link rel="stylesheet" href="src/css/style.css" />
+    <script type="module" src="src/js/controller.js"></script>
+    <title>Giphy Project</title>
   </head>
   <body>
     <header class="header">
@@ -22,14 +23,15 @@
         <h1 class="heading-secondary">Random</h1>
         <div class="random-giphy">
           <figure class="random-giphy__item">
-            <img src="./img/gal-1.jpeg" alt="" class="random-giphy__img" />
+            <img src="./src/img/gal-1.jpeg" alt="" class="random-giphy__img" />
           </figure>
-          <button class="btn random-giphy__btn">
-            <svg class="search-form__icon">
-              <use xlink:href="img/sprite.svg#icon-cycle"></use></svg
-            >Next
-          </button>
         </div>
+        <button class="btn random-btn">
+          <svg class="random-btn__icon">
+            <use xlink:href="src/img/sprite.svg#icon-cycle"></use>
+          </svg>
+          Next
+        </button>
       </section>
 
       <section class="section-finder">
@@ -42,36 +44,38 @@
             <input type="text" class="search-form__input" id="search-field" />
             <button class="btn search-form__btn">
               <svg class="search-form__icon">
-                <use xlink:href="img/sprite.svg#icon-magnifying-glass"></use>
+                <use
+                  xlink:href="src/img/sprite.svg#icon-magnifying-glass"
+                ></use>
               </svg>
-              Search
+              <span>Search</span>
             </button>
           </form>
         </div>
         <div class="gallery">
           <figure class="gallery__item gallery__item--1">
-            <img src="./img/gal-1.jpeg" alt="" class="gallery__image" />
+            <img src="./src/img/gal-1.jpeg" alt="" class="gallery__image" />
           </figure>
           <figure class="gallery__item gallery__item--2">
-            <img src="./img/gal-2.jpeg" alt="" class="gallery__image" />
+            <img src="./src/img/gal-2.jpeg" alt="" class="gallery__image" />
           </figure>
           <figure class="gallery__item gallery__item--3">
-            <img src="./img/gal-3.jpeg" alt="" class="gallery__image" />
+            <img src="./src/img/gal-3.jpeg" alt="" class="gallery__image" />
           </figure>
           <figure class="gallery__item gallery__item--4">
-            <img src="./img/gal-1.jpeg" alt="" class="gallery__image" />
+            <img src="./src/img/gal-1.jpeg" alt="" class="gallery__image" />
           </figure>
           <figure class="gallery__item gallery__item--5">
-            <img src="./img/gal-2.jpeg" alt="" class="gallery__image" />
+            <img src="./src/img/gal-2.jpeg" alt="" class="gallery__image" />
           </figure>
           <figure class="gallery__item gallery__item--6">
-            <img src="./img/gal-3.jpeg" alt="" class="gallery__image" />
+            <img src="./src/img/gal-3.jpeg" alt="" class="gallery__image" />
           </figure>
           <figure class="gallery__item gallery__item--7">
-            <img src="./img/gal-2.jpeg" alt="" class="gallery__image" />
+            <img src="./src/img/gal-2.jpeg" alt="" class="gallery__image" />
           </figure>
           <figure class="gallery__item gallery__item--8">
-            <img src="./img/gal-3.jpeg" alt="" class="gallery__image" />
+            <img src="./src/img/gal-3.jpeg" alt="" class="gallery__image" />
           </figure>
         </div>
       </section>
@@ -80,19 +84,39 @@
         <h1 class="heading-secondary">Trending</h1>
         <div class="trending-giphys">
           <figure class="trending-giphys__item trending-giphys__item--1">
-            <img src="./img/gal-1.jpeg" alt="" class="trending-giphys__img" />
+            <img
+              src="./src/img/gal-1.jpeg"
+              alt=""
+              class="trending-giphys__img"
+            />
           </figure>
           <figure class="trending-giphys__item trending-giphys__item--2">
-            <img src="./img/gal-2.jpeg" alt="" class="trending-giphys__img" />
+            <img
+              src="./src/img/gal-2.jpeg"
+              alt=""
+              class="trending-giphys__img"
+            />
           </figure>
           <figure class="trending-giphys__item trending-giphys__item--3">
-            <img src="./img/gal-3.jpeg" alt="" class="trending-giphys__img" />
+            <img
+              src="./src/img/gal-3.jpeg"
+              alt=""
+              class="trending-giphys__img"
+            />
           </figure>
           <figure class="trending-giphys__item trending-giphys__item--4">
-            <img src="./img/gal-4.jpeg" alt="" class="trending-giphys__img" />
+            <img
+              src="./src/img/gal-4.jpeg"
+              alt=""
+              class="trending-giphys__img"
+            />
           </figure>
           <figure class="trending-giphys__item trending-giphys__item--5">
-            <img src="./img/gal-5.jpeg" alt="" class="trending-giphys__img" />
+            <img
+              src="./src/img/gal-5.jpeg"
+              alt=""
+              class="trending-giphys__img"
+            />
           </figure>
         </div>
       </section>
