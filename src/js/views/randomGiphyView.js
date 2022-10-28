@@ -17,12 +17,13 @@ class RandomView extends View {
   }
 
   addHandlerNewRandomImage(handler) {
-    this._parentElement.addEventListener("click", function (e) {
-      const btn = e.target.closest(".random-giphy__btn");
-      if (!btn) return;
-
-      handler();
-    });
+    this._parentElement
+      .closest(".section-random")
+      .addEventListener("click", function (e) {
+        const btn = e.target.closest(".random-btn");
+        if (!btn) return;
+        handler();
+      });
   }
 }
 

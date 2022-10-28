@@ -10,10 +10,6 @@ main {
 
 .section-random {
   flex: 1;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   padding: 2rem;
 }
 .section-finder {
@@ -26,4 +22,10 @@ main {
   flex: 1;
   padding: 2rem;
   border-left: 1px solid $color-black;
+}
+
+.section-random__hidden,
+.section-finder__hidden,
+.section-trending__hidden {
+  display: none;
 }

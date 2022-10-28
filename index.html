@@ -8,6 +8,11 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="shortcut icon"
+      href="src/img/giphy-logo.png"
+      type="image/x-icon"
+    />
     <link rel="stylesheet" href="src/css/style.css" />
     <script type="module" src="src/js/controller.js"></script>
     <title>Giphy Project</title>
@@ -19,28 +24,33 @@
       </div>
     </header>
     <nav class="navigation">
-      <button class="navigation__btn">
+      <button class="navigation__btn navigation__btn--active" data-id="random">
         <svg class="navigation__icon">
           <use xlink:href="src/img/sprite.svg#icon-image"></use>
         </svg>
       </button>
-      <button class="navigation__btn">
+      <button class="navigation__btn" data-id="finder">
         <svg class="navigation__icon">
           <use xlink:href="src/img/sprite.svg#icon-magnifying-glass"></use>
         </svg>
       </button>
-      <button class="navigation__btn">
+      <button class="navigation__btn" data-id="trending">
         <svg class="navigation__icon">
           <use xlink:href="src/img/sprite.svg#icon-thumbs-up"></use>
         </svg>
       </button>
     </nav>
     <main>
-      <section class="section-random">
+      <section class="section-random" data-id="random">
         <h1 class="heading-secondary">Random</h1>
         <div class="random-giphy">
+          <!-- <picture class="random-giphy__item">
+            <source srcset="" media="" />
+            <img src="" alt="" />
+          </picture> -->
+
           <!-- <figure class="random-giphy__item">
-            <img src="./src/img/gal-1.jpeg" alt="" class="random-giphy__img" />
+            <img srcset="" src="./src/img/gal-1.jpeg" alt="" class="random-giphy__img" />
           </figure> -->
         </div>
         <button class="btn random-btn">
@@ -51,7 +61,7 @@
         </button>
       </section>
 
-      <section class="section-finder">
+      <section class="section-finder" data-id="finder">
         <h1 class="heading-secondary">Finder</h1>
         <div class="search-box">
           <form action="" class="search-form">
@@ -106,7 +116,7 @@
         </div>
       </section>
 
-      <section class="section-trending">
+      <section class="section-trending" data-id="trending">
         <h1 class="heading-secondary">Trending</h1>
         <div class="trending-giphys">
           <figure class="trending-giphys__item trending-giphys__item--1">
