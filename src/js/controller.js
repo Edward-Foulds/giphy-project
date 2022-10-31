@@ -3,6 +3,7 @@ import randomGiphyView from "./views/randomGiphyView.js";
 import resultsView from "./views/resultsView.js";
 import searchView from "./views/searchView.js";
 import trendingGiphyView from "./views/trendingGiphyView.js";
+import navigationView from "./views/navigationView.js";
 import "core-js/stable";
 import "regenerator-runtime";
 
@@ -20,7 +21,7 @@ const controlRandomGiphy = async function () {
 
 const controlSearchResults = async function () {
   try {
-    resultsView.renderLoading();
+    resultsView.renderLoading("beforebegin");
     const query = searchView.getQuery();
     if (!query)
       throw new Error(
@@ -30,7 +31,7 @@ const controlSearchResults = async function () {
     resultsView.render(model.state.search);
   } catch (err) {
     console.error(err);
-    resultsView.renderError(err.message);
+    resultsView.renderError(err.message, "beforebegin");
   }
 };
 

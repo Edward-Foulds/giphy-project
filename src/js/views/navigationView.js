@@ -23,18 +23,16 @@ class NavigationView {
         section.classList.add("hidden");
         if (section.dataset.id === btnId) section.classList.remove("hidden");
       });
-      // console.log(btn);
-      console.log(navBtns);
     });
   }
 
   _scrollFunctionality() {
+    console.log("scrolling");
     this._scrollBtn.style.display =
       document.documentElement.scrollTop > 30 ? "block" : "none";
   }
 
   _addHandlerScrollTop() {
-    document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   }
 }

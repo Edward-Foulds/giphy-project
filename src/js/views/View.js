@@ -54,8 +54,11 @@ export default class View {
     this._parentElement.innerHTML = "";
   }
 
-  renderLoading() {
-    const markup = `<div class="loading">
+  // Takes a location paremeter to define where to render on the screen.
+  // (This is required to ensure the resultsView renders the loading centrally and not
+  // in a gallery-grid square)
+  renderLoading(loc = "afterbegin") {
+    const markup = `<div class="message--loading">
         <svg>
           <use href="${icons}#icon-circular-graph"></use>
         </svg>
@@ -63,11 +66,14 @@ export default class View {
       </div>
     `;
     this._clear();
-    this._parentElement.insertAdjacentHTML("afterbegin", markup);
+    this._parentElement.insertAdjacentHTML(loc, markup);
   }
 
-  renderError(message = this._errorMessage) {
-    const markup = `<div class="error">
+  // Takes a location paremeter to define where to render on the screen.
+  // (This is required to ensure the resultsView renders the error centrally and not
+  // in a gallery-grid square)
+  renderError(message = this._errorMessage, loc = "afterbegin") {
+    const markup = `<div class="message--error">
           <svg>
             <use href="${icons}#icon-warning"></use>
           </svg>
@@ -75,6 +81,6 @@ export default class View {
         </div>
     `;
     this._clear();
-    this._parentElement.insertAdjacentHTML("afterbegin", markup);
+    this._parentElement.insertAdjacentHTML(loc, markup);
   }
 }

@@ -1,5 +1,6 @@
-.loading,
-.error {
+.message--welcome,
+.message--loading,
+.message--error {
   margin: 5rem auto;
   text-align: center;
   display: flex;
@@ -16,7 +17,8 @@
   }
 }
 
-.loading {
+.message--loading,
+.message--welcome {
   border: 3px $color-primary dashed;
 
   svg {
@@ -28,7 +30,7 @@
   }
 }
 
-.error {
+.message--error {
   border: 3px $color-secondary-dark dashed;
 
   svg {
