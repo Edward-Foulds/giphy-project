@@ -12,6 +12,7 @@ const controlRandomGiphy = async function () {
     randomGiphyView.renderLoading();
     await model.loadRandomGiphy();
     randomGiphyView.render(model.state.giphy);
+    randomGiphyView.addHandleLazyImage();
   } catch (err) {
     console.error(err);
     randomGiphyView.renderError(err.message);
@@ -39,7 +40,7 @@ const controlTrendingGiphys = async function () {
     trendingGiphyView.renderLoading();
     await model.loadTrendingGiphys();
     trendingGiphyView.render(model.state.trending);
-    console.log();
+    // trendingGiphyView.addHandleLazyImage();
   } catch (err) {
     console.error(err);
     trendingGiphyView.renderError(err.message);

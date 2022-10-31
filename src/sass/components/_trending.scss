@@ -1,5 +1,4 @@
 .trending-giphys {
-  padding: 2rem;
   @include respond(tab-port) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -7,7 +6,8 @@
   }
 
   &__item {
-    margin: 2rem 0;
+    margin: 1rem 0;
+    display: block;
   }
 
   &__img {
@@ -15,5 +15,6 @@
     width: 100%;
     object-fit: cover;
     display: block;
+    border: 2px solid $color-tertiary;
   }
 }

@@ -1,15 +1,10 @@
 .random-giphy {
-  padding: 2rem;
-  width: 100%;
-  // height: 30rem;
+  margin-bottom: 10rem;
 
-  // &__item {
-  //   height: 100%;
-  //   width: 100%;
-  //   background-color: red;
-  //   display: flex;
-  //   align-items: center;
-  // }
+  &__item {
+    border: 2px solid $color-tertiary;
+    display: block;
+  }
 
   &__img {
     height: auto;

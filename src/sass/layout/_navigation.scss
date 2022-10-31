@@ -1,12 +1,17 @@
 .navigation {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  display: none;
+  border-top: $color-tertiary solid 4px;
+
+  @include respond(tab-port) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   &__btn {
     cursor: pointer;
     border: none;
-    background-color: red;
+    background-color: transparent;
     width: 20rem;
     position: relative;
 
@@ -15,27 +20,21 @@
         content: "";
         position: absolute;
         width: 100%;
-        height: 3px;
-        background-color: $color-primary;
+        height: 4px;
+        background-color: $color-secondary;
         top: 0;
         left: 0;
-        // transform: scaleX(0);
-        // transition: transform 1s ease-in-out;
+        transform: translateY(-4px);
       }
 
-      // &:active::before,
-      // &:focus::before {
-      //   transform: scaleX(1);
-      // }
+      & > svg {
+        fill: $color-secondary;
+      }
     }
   }
 
   &__icon {
-    height: 4rem;
-    width: 4rem;
-  }
-
-  &__hidden {
-    display: none;
+    height: 3rem;
+    width: 3rem;
   }
 }

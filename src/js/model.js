@@ -12,23 +12,22 @@ export const state = {
   },
 };
 
+const createGiphyObject = function (data) {
+  return {
+    fixedWidth: data.images.fixed_width,
+    original: data.images.original,
+    fixedWidthDownsampled: data.images.fixed_width_downsampled,
+    fixedWidthSmall: data.images.fixed_width_small,
+    preview: data.images.downsized_still,
+    title: data.title,
+  };
+};
+
 export const loadRandomGiphy = async function () {
   try {
     // API call to return random GIPHY
-    const returnedData = await AJAX(
-      `${API_URL}random?api_key=${API_KEY}&bundle=clips_grid_picker`
-    );
-
-    // Destructuring returned data
-    const {
-      data: {
-        images: { fixed_width, original },
-      },
-    } = returnedData;
-
-    // Assigning returned data to state
-    state.giphy.lowRes = fixed_width;
-    state.giphy.highRes = original;
+    const { data } = await AJAX(`${API_URL}random?api_key=${API_KEY}`);
+    state.giphy = createGiphyObject(data);
   } catch (err) {
     throw err;
   }
@@ -39,16 +38,12 @@ export const loadSearchResults = async function (query) {
     state.search.query = query;
 
     const returnedResults = await AJAX(
-      `${API_URL}search?api_key=${API_KEY}&q=${query}&bundle=clips_grid_picker`
+      `${API_URL}search?api_key=${API_KEY}&q=${query}`
     );
 
-    state.search.results = returnedResults.data.map((giphy) => {
-      return {
-        lowRes: giphy.images.fixed_width,
-        highRes: giphy.images.original,
-        title: giphy.title,
-      };
-    });
+    state.search.results = returnedResults.data.map((giphy) =>
+      createGiphyObject(giphy)
+    );
   } catch (err) {
     throw err;
   }
@@ -56,19 +51,11 @@ export const loadSearchResults = async function (query) {
 
 export const loadTrendingGiphys = async function () {
   try {
-    const returnedData = await AJAX(
-      `${API_URL}trending?api_key=${API_KEY}&bundle=clips_grid_picker`
+    const returnedData = await AJAX(`${API_URL}trending?api_key=${API_KEY}`);
+
+    state.trending.results = returnedData.data.map((giphy) =>
+      createGiphyObject(giphy)
     );
-
-    state.trending.results = returnedData.data.map((giphy) => {
-      return {
-        lowRes: giphy.images.fixed_width,
-        highRes: giphy.images.original,
-        title: giphy.title,
-      };
-    });
-
-    console.log(state);
   } catch (err) {
     throw err;
   }

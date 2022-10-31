@@ -2,6 +2,36 @@ import icons from "url:../../img/sprite.svg";
 
 export default class View {
   _data;
+  _imgObserver = new IntersectionObserver(this.loadImg, {
+    root: null,
+    threshhold: 0,
+    rootMargin: "800px",
+  });
+
+  addHandleLazyImage() {
+    console.log(this._imgs);
+    this._imgs.forEach((img) => this._imgObserver.observe(img));
+
+    // document.addEventListener("DOMContentLoaded", this._handleImageOberserver);
+  }
+
+  // _handleImageOberserver() {
+  //   this._imgs.forEach((img) => this._imgObserver.observe(img));
+  // }
+
+  loadImg(entries, observer) {
+    const [entry] = entries;
+    console.log(entry);
+
+    if (!entry.isIntersecting) return;
+
+    entry.target.src = entry.target.dataset.src;
+
+    entry.target.addEventListener("load", function () {
+      entry.target.classList.remove("lazy-img");
+    });
+    observer.unobserve(entry.target);
+  }
 
   render(data, render = true) {
     if (!data || (Array.isArray(data) && data.length === 0))
@@ -15,11 +45,10 @@ export default class View {
     this._clear();
 
     this._parentElement.insertAdjacentHTML("afterbegin", markup);
+    this._imgs = this._parentElement.querySelectorAll("img");
   }
 
   _clear() {
-    const x = (this._parentElement.previousSibling.innerHTML = "");
-    console.log("Previous sibling:", x);
     this._parentElement.innerHTML = "";
   }
 

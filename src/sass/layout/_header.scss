@@ -1,12 +1,16 @@
 .header {
-  background-color: $color-secondary-dark;
-  height: 10vh;
-  position: relative;
+  background-color: $color-primary;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0 3rem;
+
+  @include respond(tab-port) {
+    justify-content: center;
+    padding: 0;
+  }
 
   &__text-box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    text-align: center;
   }
 }
