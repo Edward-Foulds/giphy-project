@@ -15,7 +15,9 @@ export const AJAX = async function (url) {
     if (!res.ok) throw new Error(`${data.message} (${res.status})`);
     return data;
   } catch (err) {
-    console.log("ERROROROROROR", err);
+    if (err.message === "Failed to fetch")
+      err.message =
+        "Unable to load GIPHY at this time. Please check connection and try again.";
     throw err;
   }
 };

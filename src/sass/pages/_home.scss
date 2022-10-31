@@ -13,24 +13,33 @@ main {
   }
 }
 
+[class^="section"] {
+  padding: 2rem;
+
+  &:not(:last-child) {
+    border-right: 3px solid $color-secondary;
+
+    @include respond(tab-port) {
+      border-right: none;
+    }
+  }
+}
+
 .section-random {
   flex: 1.5;
-  padding: 2rem;
 }
 .section-finder {
   flex: 4;
-  padding: 2rem;
-  border-left: 1px solid $color-black;
+  // border-left: 3px solid $color-secondary;
 }
 
 .section-trending {
   flex: 1;
-  padding: 2rem;
-  border-left: 1px solid $color-black;
+  // border-left: 3px solid $color-secondary;
 }
 
-.section-random__hidden,
-.section-finder__hidden,
-.section-trending__hidden {
-  display: none;
-}
+// .section-random__hidden,
+// .section-finder__hidden,
+// .section-trending__hidden {
+//   display: none;
+// }

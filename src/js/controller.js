@@ -5,14 +5,13 @@ import searchView from "./views/searchView.js";
 import trendingGiphyView from "./views/trendingGiphyView.js";
 import "core-js/stable";
 import "regenerator-runtime";
-import navigationView from "./views/navigationView.js";
 
 const controlRandomGiphy = async function () {
   try {
     randomGiphyView.renderLoading();
     await model.loadRandomGiphy();
     randomGiphyView.render(model.state.giphy);
-    randomGiphyView.addHandleLazyImage();
+    // randomGiphyView.addHandleLazyImage();
   } catch (err) {
     console.error(err);
     randomGiphyView.renderError(err.message);
@@ -47,13 +46,10 @@ const controlTrendingGiphys = async function () {
   }
 };
 
-const controlNavigation = function () {};
-
-const init = function () {
+const init = async function () {
   controlRandomGiphy();
   controlTrendingGiphys();
   randomGiphyView.addHandlerNewRandomImage(controlRandomGiphy);
   searchView.addHandlerSearch(controlSearchResults);
-  navigationView.addHandlerNavClick();
 };
 init();

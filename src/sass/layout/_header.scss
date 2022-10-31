@@ -1,8 +1,9 @@
 .header {
   background-color: $color-primary;
-  height: auto;
+  min-height: 7vh;
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   padding: 0 3rem;
 
   @include respond(tab-port) {

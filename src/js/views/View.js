@@ -10,14 +10,16 @@ export default class View {
 
   addHandleLazyImage() {
     console.log(this._imgs);
-    this._imgs.forEach((img) => this._imgObserver.observe(img));
+    this._imgs.forEach((img) =>
+      img.addEventListener("load", this.handleImageOberserver.bind(this, img))
+    );
 
     // document.addEventListener("DOMContentLoaded", this._handleImageOberserver);
   }
 
-  // _handleImageOberserver() {
-  //   this._imgs.forEach((img) => this._imgObserver.observe(img));
-  // }
+  handleImageOberserver(img) {
+    this._imgs.forEach((img) => this._imgObserver.observe(img));
+  }
 
   loadImg(entries, observer) {
     const [entry] = entries;

@@ -41,6 +41,11 @@ export const loadSearchResults = async function (query) {
       `${API_URL}search?api_key=${API_KEY}&q=${query}`
     );
 
+    console.log("Returned results:", returnedResults);
+
+    if (returnedResults.pagination.total_count === 0)
+      throw new Error("No results matching that search. Please try again");
+
     state.search.results = returnedResults.data.map((giphy) =>
       createGiphyObject(giphy)
     );
@@ -52,7 +57,6 @@ export const loadSearchResults = async function (query) {
 export const loadTrendingGiphys = async function () {
   try {
     const returnedData = await AJAX(`${API_URL}trending?api_key=${API_KEY}`);
-
     state.trending.results = returnedData.data.map((giphy) =>
       createGiphyObject(giphy)
     );

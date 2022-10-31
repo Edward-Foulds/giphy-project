@@ -1,0 +1,34 @@
+.totop-btn {
+  display: none;
+  width: auto;
+  position: fixed;
+  bottom: 2%;
+  left: 50%;
+  z-index: 100;
+  border: none;
+  outline: none;
+  background-color: $color-primary;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 100%;
+  transform: translateX(-50%);
+  opacity: 0.3;
+  transition: all 0.2s;
+
+  @include respond(tab-port) {
+    opacity: 1;
+  }
+
+  &:hover {
+    transform: translate(-50%, -3px);
+    box-shadow: 0 1rem 2rem rgba($color-tertiary, 0.2);
+    opacity: 1;
+  }
+
+  &__icon {
+    height: 4rem;
+    width: 4rem;
+    fill: $color-secondary;
+    z-index: 10000;
+  }
+}
