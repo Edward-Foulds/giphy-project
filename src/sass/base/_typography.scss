@@ -19,7 +19,7 @@ body {
   }
 
   @include respond(phone) {
-    font-size: 2rem;
+    font-size: 1.7rem;
     font-weight: 600;
     letter-spacing: 1.5rem;
   }
@@ -30,4 +30,5 @@ body {
   font-size: 3rem;
   font-weight: 400;
   color: $color-secondary;
+  margin-bottom: 2rem;
 }

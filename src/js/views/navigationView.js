@@ -14,11 +14,15 @@ class NavigationView {
       if (!btnId) return;
       const navBtns = document.querySelectorAll(".navigation__btn");
       const sections = document.querySelectorAll('[class*="section"');
+
+      // Remove active class from all buttons, before adding it to the selected button
       navBtns.forEach((btn) => {
         btn.classList.remove("navigation__btn--active");
         if (btn.dataset.id === btnId)
           btn.classList.add("navigation__btn--active");
       });
+
+      // Hiding all sections, before unhiding selected sections
       sections.forEach((section) => {
         section.classList.add("hidden");
         if (section.dataset.id === btnId) section.classList.remove("hidden");
@@ -27,7 +31,6 @@ class NavigationView {
   }
 
   _scrollFunctionality() {
-    console.log("scrolling");
     this._scrollBtn.style.display =
       document.documentElement.scrollTop > 30 ? "block" : "none";
   }

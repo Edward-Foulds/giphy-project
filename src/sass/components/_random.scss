@@ -1,5 +1,6 @@
 .random-giphy {
   margin-bottom: 10rem;
+  height: 40vh;
 
   &__item {
     border: 2px solid $color-tertiary;
@@ -7,10 +8,11 @@
   }
 
   &__img {
-    height: auto;
     width: 100%;
     object-fit: cover;
+
     display: block;
+    max-height: 40vh;
   }
 }
 

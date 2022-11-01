@@ -12,7 +12,7 @@ const controlRandomGiphy = async function () {
     randomGiphyView.renderLoading();
     await model.loadRandomGiphy();
     randomGiphyView.render(model.state.giphy);
-    // randomGiphyView.addHandleLazyImage();
+    randomGiphyView.addHandleLazyImage();
   } catch (err) {
     console.error(err);
     randomGiphyView.renderError(err.message);
@@ -29,6 +29,7 @@ const controlSearchResults = async function () {
       );
     await model.loadSearchResults(query);
     resultsView.render(model.state.search);
+    resultsView.addHandleLazyImage();
   } catch (err) {
     console.error(err);
     resultsView.renderError(err.message, "beforebegin");
@@ -40,7 +41,7 @@ const controlTrendingGiphys = async function () {
     trendingGiphyView.renderLoading();
     await model.loadTrendingGiphys();
     trendingGiphyView.render(model.state.trending);
-    // trendingGiphyView.addHandleLazyImage();
+    trendingGiphyView.addHandleLazyImage();
   } catch (err) {
     console.error(err);
     trendingGiphyView.renderError(err.message);
@@ -53,4 +54,5 @@ const init = async function () {
   randomGiphyView.addHandlerNewRandomImage(controlRandomGiphy);
   searchView.addHandlerSearch(controlSearchResults);
 };
+
 init();

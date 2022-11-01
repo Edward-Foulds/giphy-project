@@ -1,5 +1,6 @@
 import { TIMEOUT_SEC } from "./config.js";
 
+// Time out function to prevent AJAX call waiting for response for too long
 const timeout = function (sec) {
   return new Promise(function (_, reject) {
     setTimeout(function () {

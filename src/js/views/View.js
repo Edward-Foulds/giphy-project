@@ -4,35 +4,37 @@ export default class View {
   _data;
   _imgObserver = new IntersectionObserver(this.loadImg, {
     root: null,
-    threshhold: 0,
-    rootMargin: "800px",
+    threshhold: 0.25,
+    rootMargin: "200px",
   });
 
+  // Lazy image handler. Iterates over each image and observe functionality added
   addHandleLazyImage() {
-    console.log(this._imgs);
-    this._imgs.forEach((img) =>
-      img.addEventListener("load", this.handleImageOberserver.bind(this, img))
-    );
-
-    // document.addEventListener("DOMContentLoaded", this._handleImageOberserver);
+    console.log("Here", this._pics);
+    this._pics.forEach((pic) => this._imgObserver.observe(pic));
   }
 
-  handleImageOberserver(img) {
-    this._imgs.forEach((img) => this._imgObserver.observe(img));
-  }
-
+  // Manages the change from blurred lazy image to unblurred clear image when image in viewport
   loadImg(entries, observer) {
-    const [entry] = entries;
-    console.log(entry);
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
 
-    if (!entry.isIntersecting) return;
+      const img = entry.target.querySelector("img");
+      const sources = entry.target.querySelectorAll("source");
 
-    entry.target.src = entry.target.dataset.src;
+      sources.forEach((source) => {
+        source.srcset = source.dataset.srcset;
+        source.removeAttribute("data-srcset");
+      });
 
-    entry.target.addEventListener("load", function () {
-      entry.target.classList.remove("lazy-img");
+      img.src = img.dataset.src;
+      img.removeAttribute("data-src");
+
+      img.addEventListener("load", function () {
+        entry.target.classList.remove("lazy-img");
+      });
+      observer.unobserve(entry.target);
     });
-    observer.unobserve(entry.target);
   }
 
   render(data, render = true) {
@@ -47,7 +49,9 @@ export default class View {
     this._clear();
 
     this._parentElement.insertAdjacentHTML("afterbegin", markup);
-    this._imgs = this._parentElement.querySelectorAll("img");
+
+    // Picture elements selected ready for lazy image load
+    this._pics = this._parentElement.querySelectorAll(".lazy-img");
   }
 
   _clear() {

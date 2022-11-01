@@ -51,7 +51,7 @@ body {
       letter-spacing: 2rem; } }
   @media only screen and (max-width: 37.5em) {
     .heading-primary {
-      font-size: 2rem;
+      font-size: 1.7rem;
       font-weight: 600;
       letter-spacing: 1.5rem; } }
 
@@ -59,7 +59,8 @@ body {
   align-self: flex-start;
   font-size: 3rem;
   font-weight: 400;
-  color: #d61d40; }
+  color: #d61d40;
+  margin-bottom: 2rem; }
 
 @media only screen and (max-width: 56.25em) {
   .hidden {
@@ -165,15 +166,16 @@ body {
     border: 2px solid #011638; }
 
 .random-giphy {
-  margin-bottom: 10rem; }
+  margin-bottom: 10rem;
+  height: 40vh; }
   .random-giphy__item {
     border: 2px solid #011638;
     display: block; }
   .random-giphy__img {
-    height: auto;
     width: 100%;
     object-fit: cover;
-    display: block; }
+    display: block;
+    max-height: 40vh; }
 
 .random-btn__icon {
   height: 2rem;
@@ -256,7 +258,7 @@ body {
 
 .header {
   background-color: #1dd6b3;
-  min-height: 7vh;
+  height: 7vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -272,27 +274,23 @@ body {
   background-color: #dad2d8; }
 
 main {
-  margin-top: 3rem;
+  padding-top: 3rem;
   display: flex;
   justify-content: center;
   width: 100vw; }
   @media only screen and (max-width: 56.25em) {
     main {
       flex-direction: column; } }
-
-[class^="section"] {
-  padding: 2rem; }
-  [class^="section"]:not(:last-child) {
-    border-right: 3px solid #d61d40; }
-    @media only screen and (max-width: 56.25em) {
-      [class^="section"]:not(:last-child) {
-        border-right: none; } }
-
-.section-random {
-  flex: 1.5; }
-
-.section-finder {
-  flex: 4; }
-
-.section-trending {
-  flex: 1; }
+  main .section-random {
+    flex: 1.5; }
+  main .section-finder {
+    flex: 4; }
+  main .section-trending {
+    flex: 1; }
+  main [class^="section"] {
+    padding: 2rem; }
+    main [class^="section"]:not(:last-child) {
+      border-right: 3px solid #d61d40; }
+      @media only screen and (max-width: 56.25em) {
+        main [class^="section"]:not(:last-child) {
+          border-right: none; } }
