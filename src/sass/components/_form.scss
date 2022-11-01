@@ -10,28 +10,30 @@
 
   &__input {
     margin: 1rem 0;
-    padding: 1.5rem;
+    padding: 1.2rem;
+    font-size: 1.5rem;
+    font-weight: 400;
 
     font-family: inherit;
-    color: inherit;
-    background-color: rgba($color-white, 0.5);
+    color: $color-primary;
+    background-color: rgba($color-tertiary, 0.5);
     border: 2px solid $color-tertiary;
     transition: all 0.3s;
 
     &:hover {
-      transform: scale(1.01);
-      border: 2px solid $color-secondary;
+      border: 2px solid $color-primary;
     }
 
     &:focus {
       outline: none;
       box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
-      border: 2px solid $color-secondary;
+      border: 2px solid $color-primary;
     }
   }
 
   &__icon {
     height: 2rem;
     width: 2rem;
+    fill: $color-tertiary;
   }
 }

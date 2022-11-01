@@ -1,9 +1,10 @@
 .btn {
   background-color: $color-primary;
-  border: 2px solid $color-tertiary;
+  border: 2px solid rgba($color-tertiary, 0.5);
   font-family: "Sora", sans-serif;
   width: 100%;
   padding: 1rem 4rem;
+  color: inherit;
 
   display: flex;
   justify-content: center;
@@ -15,6 +16,6 @@
 
   &:hover {
     transform: translateY(-3px);
-    box-shadow: 0 1rem 2rem rgba($color-tertiary, 0.2);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
   }
 }

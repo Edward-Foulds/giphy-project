@@ -31,12 +31,12 @@
 }
 
 .message--error {
-  border: 3px $color-secondary-dark dashed;
+  border: 3px $color-secondary dashed;
 
   svg {
-    fill: $color-secondary-dark;
+    fill: $color-secondary;
   }
   p {
-    color: $color-secondary-dark;
+    color: $color-secondary;
   }
 }
